@@ -13,39 +13,15 @@ public class PionValue {
 		this.color = color;
 		this.value= value;
 	}
-
 	
-	//Get and Set
-	public int getX() {
-		return x;
-	}
-
-	public void setX(int x) {
-		this.x = x;
-	}
-
-	public int getY() {
-		return y;
-	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
-
-	public int getColor() {
-		return color;
-	}
-
-	public void setColor(int color) {
+	public PionValue(int color)
+	{
 		this.color = color;
+		this.value = 0;
 	}
-
-	public int getValue() {
-		return value;
+	
+	public PionValue()
+	{
+		this.value = 0;
 	}
-
-	public void setValue(int value) {
-		this.value = value;
-	}
-
 }

@@ -4,7 +4,7 @@ import logic.*;
 import java.util.concurrent.*;
 import ai.AbstractAI;
 import ai.RandomAI;
-import ai.AI;
+
 
 /**
  *  The twixt game running class
@@ -93,7 +93,7 @@ public class RunningGame extends Thread
 	}
 
 	/**
-	 *   Setter of the delayidx_cur_player
+	 *   Setter of the delay
 	 *
 	 *   @param delay the delay in milliseconds
 	 */
