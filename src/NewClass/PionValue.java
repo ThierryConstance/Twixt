@@ -13,15 +13,4 @@ public class PionValue {
 		this.color = color;
 		this.value= value;
 	}
-	
-	public PionValue(int color)
-	{
-		this.color = color;
-		this.value = 0;
-	}
-	
-	public PionValue()
-	{
-		this.value = 0;
-	}
 }

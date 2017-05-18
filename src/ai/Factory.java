@@ -14,7 +14,7 @@ public class Factory
 		/* List Classes and added them to the list */
 		vect_ai.add("RandomAI");
 		vect_ai.add("RandomConnectionAI");
-		vect_ai.add("AI");
+		
 		
 	}
 	
