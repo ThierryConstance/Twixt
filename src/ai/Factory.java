@@ -12,10 +12,9 @@ public class Factory
 		vect_ai = new Vector<String>();
 
 		/* List Classes and added them to the list */
-		vect_ai.add("AI");
 		vect_ai.add("RandomAI");
 		vect_ai.add("RandomConnectionAI");
-		
+		vect_ai.add("AI");
 		
 	}
 	
