@@ -1,5 +1,8 @@
 package ai;
 
+import gui.Constants;
+
+import java.awt.Dimension;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -30,6 +33,7 @@ public class AI extends AbstractAI {
 		return logicManager.getAllPossibleMoves().get(0);
 	}
 	
+	// Creation of List<PionValue> =============================================================================
 	/**
 	 * A verifier
 	 * 	X	A	X	A	X
@@ -377,7 +381,7 @@ public class AI extends AbstractAI {
 		return result;
 	}
 	
-	
+	//ADD ======================================================================================================
 	public void AddCouplePionAntiEnemy(CouplePionAntiEnemy cpae)
 	{
 		this.PlayThisIfEnemyPlayThat.add(cpae);
@@ -431,7 +435,8 @@ public class AI extends AbstractAI {
 		}
 		return lp;
 }
-//===================================================================================================
+	//===================================================================================================
+	
 	public List<PionValue> mostImportantPoint(List<PionValue> lPion){
 		List<PionValue> listPion = new ArrayList<PionValue>();
 		PionValue pion = new PionValue(0, 0, 1, 5);
@@ -441,6 +446,24 @@ public class AI extends AbstractAI {
 		listPion.add(pion1);
 		listPion.add(pion2);
 		return listPion;
+	}
+	
+	// Generation of list wich include all the pion place on the board ==================================
+	/*public PionValue(int x, int y,int color, int value)*/
+	private List<PionValue> listPionAlreadyPlaceGenerate(int[][] board) {
+		List<PionValue> listPionAlreadyPlace = new ArrayList<PionValue>();
+		int n = board.length;
+		int x,y;
+		for (x=0; x < n; x++){
+			for (y=0; y<n; y++){
+				//if a pion is set at this place we add it at our list
+				if (board[x][y] != 0){
+					listPionAlreadyPlace.add(new PionValue(x, y, board[x][y], 0));
+				}
+			}
+		}
+		
+		return listPionAlreadyPlace;
 	}
 	
 	//===================================================================================================
@@ -486,14 +509,16 @@ public class AI extends AbstractAI {
 	public int[] chooseMove(int mycolor, int[][] board, Connections myConnections, Connections opConnections) 
 	{
         int[] point = new int[2];
-        List<PionValue> listPionAlreadyPlace = new ArrayList<PionValue>();
+        int alphabeta;   
+        List<PionValue> l;
+        List<PionValue> lPion;
+        boolean ia = true;
         
-        listPionAlreadyPlace = listPionAlreadyPlaceGenerate(board);
-        this.setListPionAlreadyPlace(listPionAlreadyPlace);
+        this.setListPionAlreadyPlace(listPionAlreadyPlaceGenerate(board));
         
-		
-
-
+        l = mostImportantPoint(lPion);
+        
+        alphabeta = alphaBeta(l, 0, 0, ia);
 		return point;
     }
 
@@ -513,6 +538,6 @@ public class AI extends AbstractAI {
 	public void setListPionAlreadyPlace(List<PionValue> listPionAlreadyPlace) {
 		ListPionAlreadyPlace = listPionAlreadyPlace;
 	}
-}
+
 }
 
