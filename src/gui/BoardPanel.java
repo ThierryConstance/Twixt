@@ -97,7 +97,7 @@ public class BoardPanel extends JPanel
 			System.out.println("x = " + points[k][0] + " et y = " + points[k][1]);
 			g.setColor(Constants.bgColor);	
 			g.fillOval(Constants.offSet + (Constants.cell - Constants.peg) / 2 + points[k][1] * Constants.cell, Constants.offSet + (Constants.cell - Constants.peg) / 2 + points[k][0] * Constants.cell, Constants.peg, Constants.peg);
-			g.setColor(Constants.black);
+			g.setColor(Color.black);
 			g.drawString(value, Constants.offSet + (Constants.cell - Constants.peg) / 2 + points[k][1] * Constants.cell +5, Constants.offSet + (Constants.cell - Constants.peg) / 2 + points[k][0] * Constants.cell + 11);
 		}
 	}
